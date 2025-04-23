@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Andre Moreira, desenvolvedor web e designer.">
+    <meta name="keywords" content="Portfólio, Andre Moreira, desenvolvedor, designer, web">
+    <meta name="author" content="Andre Moreira">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css">
+    <link rel="stylesheet" href="projetos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Portfólio Andre Moreira</title>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div class="content-container bg-gray-800 bg-opacity-90 mx-auto p-6 rounded-lg shadow-lg">
+        <header class="text-center p-4">
+            <nav class="flex flex-wrap justify-between items-center">
+                <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">About</a></li>
+                    <li><a href="projetos.html">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container mx-auto relative" id="projects">
+            <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+
+        <div class="project-card">
+            <h3 class="text-xl font-bold mt-4">Online grocery store</h3>
+            <p class="text-lg mb-4">This project is an online store for a grocery shop (a school project) where customers select their products and complete a data form to make a purchase. The administrator logs in and can manage the products and orders. Responsive website.</p>
+            
+            <!-- Galeria de imagens -->
+            <div class="gallery grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.39.12.png" alt="Project Image 1" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.18.47.png" alt="Project Image 3" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.20.01.png" alt="Project Image 4" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.20.41.png" alt="Project Image 5" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.22.46.png" alt="Project Image 6" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.45.22.png" alt="Project Image 7" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.46.38.png" alt="Project Image 8" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 20.48.29.png" alt="Project Image 9" class="rounded-lg shadow-lg">
+
+            </div>
+            <hr class="my-8 border-gray-700">
+        </div>
+        <div class="project-card">
+            <h3 class="text-xl font-bold mt-4">Website for web development with online booking.</h3>
+            <p class="text-lg mb-4">This project is a website for a software development company. It includes an automatic quote generator for clients, a news section, and showcases the company's projects. There's a login area for both users and administrators, where clients can schedule meetings. In the administrator section, across different pages, it's possible to manage projects, schedules, and news.</p>
+            
+            <!-- Galeria de imagens -->
+            <div class="gallery grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.12.28.png" alt="Project Image 10" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.11.43.png" alt="Project Image 11" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.10.21.png" alt="Project Image 12" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.09.42.png" alt="Project Image 13" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.09.11.png" alt="Project Image 14" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.08.01.png" alt="Project Image 15" class="rounded-lg shadow-lg">
+                <img src="/imagens/Captura de ecrã 2025-04-22, às 22.07.13.png" alt="Project Image 16" class="rounded-lg shadow-lg">
+            </div>
+            <hr class="my-8 border-gray-700">
+            <p class="text-lg mb-4" id="progress">More projects in progress ...</p>
+
+        </div>
+
+    </div>
+
+    <!-- Modal para exibir imagens -->
+    <div id="image-modal">
+        <img id="modal-image" src="" alt="Expanded Image" class="rounded-lg shadow-lg max-w-full max-h-full">
+        <button id="close-modal" class="absolute top-5 right-5 text-white text-2xl">&times;</button>
+    </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const galleryImages = document.querySelectorAll(".gallery img");
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+            const closeModal = document.getElementById("close-modal");
+
+            let currentIndex = 0; // Índice da imagem atual
+
+            // Abre o modal ao clicar em uma imagem
+            galleryImages.forEach((img, index) => {
+                img.addEventListener("click", function () {
+                    currentIndex = index; // Define o índice da imagem clicada
+                    const src = this.getAttribute("src"); // Obtém o atributo 'src' da imagem clicada
+                    modalImage.setAttribute("src", src); // Define o 'src' da imagem no modal
+                    modal.style.display = "flex"; // Mostra o modal
+                });
+            });
+
+            // Fecha o modal ao clicar no botão de fechar
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none"; // Oculta o modal
+                modalImage.setAttribute("src", ""); // Limpa o 'src' da imagem no modal
+            });
+
+            // Fecha o modal ao clicar fora da imagem
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none"; // Oculta o modal
+                    modalImage.setAttribute("src", ""); // Limpa o 'src' da imagem no modal
+                }
+            });
+
+            // Passa para a próxima imagem ao clicar na imagem no modal
+            modalImage.addEventListener("click", function () {
+                currentIndex = (currentIndex + 1) % galleryImages.length; // Atualiza o índice para a próxima imagem
+                const nextSrc = galleryImages[currentIndex].getAttribute("src"); // Obtém o 'src' da próxima imagem
+                modalImage.setAttribute("src", nextSrc); // Atualiza o 'src' da imagem no modal
+            });
+        });
+    </script>
+</body>
+</html>

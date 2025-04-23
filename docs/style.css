@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(19, 19, 19, 0.935); /* Preto mais claro com opacidade */
+    color: rgb(255, 255, 255); /* Texto branco para contraste */
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes blink {
+    100% {
+        border-color: transparent;
+    }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 0.5s steps(30, end);
+}
+
+
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in {
+    animation: zoomIn 0.5s ease-out;
+}
+
+@keyframes zoomIn2 {
+    from {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in2 {
+    animation: zoomIn 1s ease-out;
+}
+
+@keyframes zoomIn3 {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in3 {
+    animation: zoomIn 1.5s ease-out;
+}
+
+@keyframes zoomIn4 {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in4 {
+    animation: zoomIn 2s ease-out;
+}
+
+/* Container do conteúdo */
+.content-container {
+    max-width: 1200px; /* Define a largura máxima */
+    width: 90%; /* Largura padrão */
+    height: 100vh; /* Altura total da tela */
+    border-radius: 30px 30px 0 0; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 8px 15px rgba(104, 103, 103, 0.557); /* Sombra para destaque */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    margin-bottom: 0;
+    background: linear-gradient(
+        180deg,
+        #090909,
+        #353434,
+        #211f1f,
+        #191818
+    );
+
+
+}
+
+header {
+    padding: 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255); /* Ajustado para combinar com o fundo */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    font-size: small;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    padding: 10px 15px;
+}
+
+nav li a:hover {
+    border-bottom: 1px solid #ffffffbc;
+}
+
+h1 {
+    position: absolute; /* Remove o <h1> do fluxo normal do layout */
+    top: 450px; /* Ajusta a posição vertical */
+    left: 35%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza o texto */
+    font-size: 90px; /* Tamanho da fonte */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    margin: 0; /* Remove margens extras */
+    z-index: 10; /* Garante que o <h1> fique acima de outros elementos */
+}
+
+#redes-sociais {
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    position: absolute;  
+    top: 740px; /* Ajusta a posição vertical */
+    left: 74%; /* Centraliza horizontalmente */
+    font-size: 25px; /* Tamanho da fonte */
+    
+}
+
+#redes-sociais ul {
+    list-style: none; /* Remove o marcador da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens */
+}
+
+#redes-sociais a {
+    text-decoration:none;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    padding: 10px 15px;
+
+}
+
+#redes-sociais a:hover {
+    background-color: #333131a5; /* Fundo mais claro ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(104, 103, 103, 0.557); /* Sombra mais intensa ao passar o mouse */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: background-color 0.4s ease; /* Transição suave */
+    
+}
+
+section {
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: #00000000; /* Fundo do conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(104, 103, 103, 0.557); /* Sombra para destaque */   
+    width: 300px; /* Largura fixa */
+    height: 100px; /* Altura fixa */
+    font-size:smaller;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+section h2 {
+    font-size: 16px;
+}
+
+section:hover {
+    background-color: #333131a5; /* Fundo mais claro ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(104, 103, 103, 0.557); /* Sombra mais intensa ao passar o mouse */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: background-color 0.4s ease; /* Transição suave */
+}
+
+section a {
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    text-decoration: none;
+
+}
+
+section a:hover {
+    text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+}
+
+.relative {
+    position: relative; /* Define o contexto de posicionamento */
+    display: flex;
+
+}
+
+img {
+    filter: grayscale(80%); /* Aplica preto e branco e sombra */
+    position: absolute;
+    transform: scaleX(-1); /* Espelha a imagem horizontalmente */
+    width: 35%; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    top: -140px; /* Move a imagem mais para cima */
+    left: -16px; /* Centraliza a imagem horizontalmente */
+}
+
+main {
+    margin-top: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px; /* Tamanho menor para telas pequenas */
+        top: 555px; /* Ajusta a posição vertical */
+        text-align: center;
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Garante centralização */
+    }
+
+    #redes-sociais {
+        font-size: 30px; /* Tamanho menor para telas pequenas */
+        top: 830px; /* Ajusta a posição vertical */
+        left: 30%; /* Centraliza horizontalmente */
+        margin: 10px; /* Espaçamento superior */
+    }
+
+    img {
+        width: 25%; /* Largura menor para telas pequenas */
+    }
+}

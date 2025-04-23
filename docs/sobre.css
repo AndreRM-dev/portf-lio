@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(19, 19, 19, 0.935); /* Preto mais claro com opacidade */
+    color: rgb(255, 255, 255); /* Texto branco para contraste */
+
+}
+
+/* Container do conteúdo */
+.content-container {
+    max-width: 1200px; /* Define a largura máxima */
+    width: 90%; /* Largura padrão */
+    height: 100vh; /* Altura total da tela */
+    border-radius: 30px 30px 0 0; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 8px 15px rgba(104, 103, 103, 0.557); /* Sombra para destaque */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    margin-bottom: 0;
+    background: linear-gradient(
+        180deg,
+        #090909,
+        #353434,
+        #211f1f,
+        #191818
+    );
+
+
+}
+
+header {
+    padding: 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255); /* Ajustado para combinar com o fundo */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    font-size: small;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    padding: 10px 15px;
+}
+
+nav li a:hover {
+    border-bottom: 1px solid #ffffffbc;
+}
+
+
+
+h2 {
+    font-size: 2.5em;
+    margin: 0;
+    color: rgb(255, 255, 255); /* Ajustado para contraste */
+    margin-left: 40px;
+    position: absolute;
+    top: 10%;
+
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.info-section {
+    display: none; /* Oculta todas as seções por padrão */
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Transição suave */
+    margin-bottom: 80px; /* Espaçamento entre as seções */
+    
+}
+
+.info-section.active {
+    display: flex; /* Mostra a seção ativa */
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+.character {
+    width: 100px; /* Tamanho do boneco */
+    margin-bottom: 10px; /* Espaçamento entre o boneco e o balão */
+    animation: bounce 2s infinite; /* Animação de pular */
+}
+
+.speech-bubble {
+    position: relative;
+    background: transparent; /* Cor do balão */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 15px;
+    max-width: 80%; /* Largura máxima do balão */
+    text-align: center;
+    font-size: 1em;
+    box-shadow: 0 8px 15px rgba(104, 103, 103, 0.557); /* Sombra para destaque */
+    animation: zoomIn 1s ease-out;
+
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Posição da ponta do balão */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #ffffff; /* Cor da ponta do balão */
+}
+
+.speech-bubble.no-tail::after {
+    display: none; /* Remove a ponta do balão */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Espaçamento entre o balão e as habilidades */
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os itens */
+    color: #ffffff;
+    font-size: 2.2em; /* Tamanho da fonte */
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.2em; /* Tamanho da fonte reduzido para telas menores */
+        margin-left: 20px; /* Ajusta o espaçamento */
+        top: 5%; /* Ajusta a posição */
+    }
+
+    .character {
+        width: 80px; /* Tamanho do boneco reduzido */
+    }
+
+    .speech-bubble {
+        max-width: 90%; /* Largura máxima do balão reduzida */
+        font-size: 0.8em; /* Tamanho da fonte reduzido */
+    }
+
+    #skills ul {
+        font-size: 1.5em; /* Tamanho da fonte reduzido para habilidades */
+    }
+    
+}
+
+
+
+

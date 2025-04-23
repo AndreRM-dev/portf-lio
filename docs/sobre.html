@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Andre Moreira, desenvolvedor web e designer.">
+    <meta name="keywords" content="Portfólio, Andre Moreira, desenvolvedor, designer, web">
+    <meta name="author" content="Andre Moreira">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css">
+    <link rel="stylesheet" href="sobre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Portfólio Andre Moreira</title>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div class="content-container bg-gray-800 bg-opacity-90 mx-auto p-6 rounded-lg shadow-lg">
+        <header class="text-center p-4">
+            <nav class="flex flex-wrap justify-between items-center">
+                <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">About</a></li>
+                    <li><a href="projetos.html">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container mx-auto relative" id="about">
+            <h2 class="text-3xl font-bold mb-4">About me</h2>
+            <div class="info-section">
+                <div class="speech-bubble">
+                    <p>Hi, my name is André Moreira and I am 30 years old.</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="speech-bubble">
+                    <p>I am a multifaceted professional with training in web development. I have a passion for creating user-friendly and visually appealing websites. My goal is to combine my technical skills with my creativity to deliver high-quality projects.</p>
+                </div>
+            </div>
+
+            <div class="info-section" id="skills">
+                <div class="speech-bubble">
+                    <ul class="skills-list">
+                        <li><i class="fa-brands fa-html5"></i></li>
+                        <li><i class="fa-brands fa-css3-alt"></i></li>
+                        <li><i class="fa-brands fa-js"></i></li>
+                        <li><i class="fa-brands fa-php"></i></li>
+                        <li><i class="fa-solid fa-database"></i></li>
+                        <li><i class="fa-brands fa-bootstrap"></i></li>
+                        <li><i class="fa-brands fa-react"></i></li>
+                        <li><i class="fa-brands fa-node-js"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="speech-bubble no-tail">
+                    <p>In addition to my technical skills, I have a background in Occupational Health and Safety and the Environment. I have experience in customer service and I ran my own business as a barber shop owner for six years. I have recently developed new skills in Web Development through specialized training, which demonstrates my adaptability and strong interest in transitioning into the technology sector.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".info-section");
+            let currentIndex = 0;
+
+            function showNextSection() {
+                // Mostra a próxima seção
+                sections[currentIndex].classList.add("active");
+
+                // Atualiza o índice para a próxima seção
+                currentIndex = (currentIndex + 1) % sections.length; // Continua até a última seção
+            }
+
+            // Mostra as seções uma a uma a cada 5 segundos
+            setInterval(showNextSection, 2000);
+
+            // Mostra a primeira seção imediatamente
+            showNextSection();
+        });
+    </script>
+</body>
+</html>
