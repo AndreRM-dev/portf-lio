@@ -175,6 +175,11 @@ h3 {
         object-position: center; /* Centraliza a imagem dentro da célula */
         animation: zoomIn 0.5s ease-in-out;
     }
+
+    .content-container {
+
+        height: 140vh;
+    }
     
 }
 
